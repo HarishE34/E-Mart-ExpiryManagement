@@ -326,6 +326,21 @@ const Notify = () => {
             </button>
           )}
           {product.actions.includes('Remove') && (
+            <div
+              style={{
+                padding: '1vh 0.8vw',
+                borderRadius: '0.4vw',
+                fontSize: '0.8vw',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                minHeight: '2.6vh', /* Approximation: 2 * 1vh padding + a bit for the font/icon height */
+                minWidth: '7vw', /* Approximation: 2 * 0.8vw padding + a bit for the text/icon width */
+              }}
+            >
+            </div>
+          )}
+          {product.actions.includes('Remove') && (
             <button
               onClick={() => handleRemove(product.id)}
               className="flex items-center justify-center font-semibold text-red-600 border-2 border-red-300 bg-red-50 hover:bg-red-100 transition-colors shadow-sm"
@@ -430,8 +445,8 @@ const Notify = () => {
                 <select
                   value={sortKey}
                   onChange={(e) => setSortKey(e.target.value)}
-                  className="block w-full border border-gray-300 bg-white appearance-none pr-10 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-shadow shadow-inner"
-                  style={{ height: vh(4.5), padding: `${vh(1)} ${vw(1)}`, borderRadius: vw(0.3), fontSize: vw(1) }}
+                  className="block w-full h-[vh] border border-gray-300 bg-white appearance-none pr-10 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-shadow shadow-inner"
+                  style={{ height: vh(5.5), padding: `${vh(1)} ${vw(1)}`, borderRadius: vw(0.3), fontSize: vw(1) }}
                 >
                   <option value="urgency">Urgency (High to Low)</option>
                   <option value="expiry">Expiry Date (Ascending)</option>
@@ -457,7 +472,7 @@ const Notify = () => {
                   value={filterCategory}
                   onChange={(e) => setFilterCategory(e.target.value)}
                   className="block w-full border border-gray-300 bg-white appearance-none pr-10 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-shadow shadow-inner"
-                  style={{ height: vh(4.5), padding: `${vh(1)} ${vw(1)}`, borderRadius: vw(0.3), fontSize: vw(1) }}
+                  style={{ height: vh(5.5), padding: `${vh(1)} ${vw(1)}`, borderRadius: vw(0.3), fontSize: vw(1) }}
                 >
                   <option>All Categories</option>
                   <option>Dairy</option>
