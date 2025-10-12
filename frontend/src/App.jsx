@@ -1,8 +1,12 @@
 import React from 'react'
+import ProductsPage from './components/products-pg/Products'
+import AddProductForm from './components/products-pg/ProdPopup'
 
 const App = () => {
   return (
-    <div className='flex justify-center items-center w-[100vw] h-[100vh]'>App</div>
+    <div>
+    <ProductsPage/>
+    </div>
   )
 }
 
