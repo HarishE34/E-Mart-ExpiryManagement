@@ -28,6 +28,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { mockProducts, getDaysUntilExpiry } from "../../utils/MockData"; // <-- ensure proper import
+import SideBar from "../SideBar";
 
 // ----------------------- //
 //  Inline Button & Progress
@@ -125,9 +126,9 @@ export default function Dashboard() {
   return (
     <div className="w-[100vw] h-[100vh] flex">
       {/* Sidebar */}
-      <div className="w-[15%] h-[100vh] bg-gray-800 text-white flex flex-col items-center p-4">
-        
-      </div>
+      
+        <SideBar />
+      
 
       {/* Main Dashboard Content */}
       <div className="w-[85%] h-[100vh] overflow-y-auto p-6 bg-gray-50">

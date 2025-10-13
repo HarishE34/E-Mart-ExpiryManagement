@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Mail, Lock, ShoppingCart, Eye, EyeOff } from 'lucide-react';
+import {Link} from "react-router-dom"
 
-export function Login({ onLogin }) {
+export default function Login({ onLogin }) {
   const [showPassword, setShowPassword] = useState(false);
   const [selectedRole, setSelectedRole] = useState('admin');
   const [tab, setTab] = useState('login');
@@ -196,7 +197,7 @@ export function Login({ onLogin }) {
                   Forgot Password?
                 </button>
               </div>
-              <button type="submit" style={greenButton}>Sign In</button>
+            <Link to="/Dashboard" > <button type="submit" style={greenButton}>Sign In</button></Link>
             </form>
           )}
           {/* Signup Tab */}
@@ -274,7 +275,7 @@ export function Login({ onLogin }) {
                   I agree to the Terms & Conditions
                 </span>
               </div>
-              <button type="submit" style={greenButton}>Create Account</button>
+           <Link to="/Dashboard"> <button type="submit" style={greenButton}>Create Account</button></Link>  
             </form>
           )}
         </div>
