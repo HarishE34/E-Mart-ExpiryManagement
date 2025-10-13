@@ -124,13 +124,12 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className="w-[100vw] h-[100vh] flex">
-      {/* Sidebar */}
-      
-        <SideBar />
-      
+   
+     
 
-      {/* Main Dashboard Content */}
+    
+
+      
       <div className="w-[85%] h-[100vh] overflow-y-auto p-6 bg-gray-50">
         
         {/* Top Bar: Search, Notification, Profile */}
@@ -437,6 +436,6 @@ export default function Dashboard() {
           </CardContent>
         </Card>
       </div>
-    </div>
+    
   );
 }

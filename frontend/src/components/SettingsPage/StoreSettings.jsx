@@ -90,9 +90,7 @@ export default function StoreSettings() {
   };
 
   return (
-    <div style={{height:"100vh",width:"100vw",display:"flex",flexDirection:"row"}}>
-      {/*sidebar*/}
-    <div style={{height:"100vh",width:"15vw",border:"1px solid blue"}}></div>
+    
 
     <div style={{backgroundColor:"white",height:"100vh",width:"85vw",display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
     <div style={containerStyle}>
@@ -230,7 +228,7 @@ export default function StoreSettings() {
       </div>
     </div>
     </div>
-    </div>
+    
   );
 }
 

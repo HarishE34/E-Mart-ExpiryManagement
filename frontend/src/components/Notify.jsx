@@ -361,11 +361,7 @@ const Notify = () => {
 
 
   return (
-    <div className='flex h-screen w-screen overflow-hidden font-inter'>
-      {/* Sidebar (Fixed width) */}
-      <SideBar />
-
-      {/* Main Content Area (Takes up remaining space, prevents horizontal overflow) */}
+   
       <div
         className="flex-1 bg-gray-50 overflow-y-auto" // FLEX-1 FIX: Takes remaining space
         style={{ fontSize: vw(1.1) }}
@@ -541,7 +537,7 @@ const Notify = () => {
           </section>
         </div>
       </div>
-    </div>
+  
   );
 };
 

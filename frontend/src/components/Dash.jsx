@@ -1,0 +1,25 @@
+import React, { useState } from 'react'
+import SideBar from './SideBar'
+import Dashboard from './dashboard/Dashboard';
+import ProductsPage from './products-pg/Products';
+import Notify from './Notify';
+import StoreSettings from './SettingsPage/StoreSettings';
+
+const Dash = () => {
+
+    const [activePage, setActivePage] = useState('Dashboard');
+  return (
+    <div className='flex h-[100vh] w-[100vw] '>
+      <SideBar setActivePage={setActivePage} />
+      {activePage === 'Dashboard' && <Dashboard />}
+      {activePage === 'Products' && <ProductsPage />}
+      {activePage === 'Alerts' && <Notify />}
+      {/* {activePage === 'Reports' && <PlantTree />} */}
+      {activePage === 'Settings' && <StoreSettings />}
+      
+
+    </div>
+  )
+}
+
+export default Dash
