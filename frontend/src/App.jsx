@@ -1,8 +1,13 @@
 import React from 'react'
+import Dashboard from './components/dashboard/Dashboard'
+import { Login } from './components/Login'
 
 const App = () => {
   return (
-    <div className='flex justify-center items-center w-[100vw] h-[100vh]'>App</div>
+    <div >
+      <Login />
+      {/* <Dashboard /> */}
+    </div>
   )
 }
 
