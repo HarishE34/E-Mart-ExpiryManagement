@@ -28,6 +28,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { mockProducts, getDaysUntilExpiry } from "../../utils/MockData"; // <-- ensure proper import
+import SideBar from "../SideBar";
 
 // ----------------------- //
 //  Inline Button & Progress
@@ -82,7 +83,7 @@ function Progress({ value = 0, className = "" }) {
 //      Dashboard
 // ----------------------- //
 
-export default function Dashboard() {
+export default function Dashboard({setActivePage}) {
   const totalProducts = mockProducts.length;
   const nearExpiryProducts = mockProducts.filter(
     (p) => p.status === "near-expiry"
@@ -123,13 +124,12 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className="w-[100vw] h-[100vh] flex">
-      {/* Sidebar */}
-      <div className="w-[15%] h-[100vh] bg-gray-800 text-white flex flex-col items-center p-4">
-        
-      </div>
+   
+     
 
-      {/* Main Dashboard Content */}
+    
+
+      
       <div className="w-[85%] h-[100vh] overflow-y-auto p-6 bg-gray-50">
         
         {/* Top Bar: Search, Notification, Profile */}
@@ -168,11 +168,13 @@ export default function Dashboard() {
             </p>
           </div>
           <div className="flex items-center gap-2">
-            <Button variant="outline" size="sm">
+            <Button variant="outline" size="sm" onClick={() => setActivePage("Reports")}
+>
               <Calendar className="w-4 h-4 mr-2" />
               Last 30 Days
             </Button>
-            <Button className="bg-green-600 hover:bg-green-700" size="sm">
+            <Button className="bg-green-600 hover:bg-green-700" size="sm" onClick={() => setActivePage("Reports")}
+>
               <TrendingUp className="w-4 h-4 mr-2" />
               Export Report
             </Button>
@@ -390,12 +392,13 @@ export default function Dashboard() {
         </div>
 
         {/* Recent Alerts */}
-        <Card className="mt-6">
-          <CardHeader>
+        <Card className="mt-6" onClick={() => setActivePage("Alerts")}
+>
+          <CardHeader >
             <CardTitle>Recent Alerts</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="space-y-3">
+            <div className="space-y-3" >
               {mockProducts.filter(p => p.status !== 'fresh').slice(0, 5).map((product) => {
                 const daysLeft = getDaysUntilExpiry(product.expiryDate);
                 return (
@@ -421,7 +424,7 @@ export default function Dashboard() {
                     </div>
                     <div className="flex gap-2">
                       {product.status === 'near-expiry' && (
-                        <Button variant="outline" size="sm" className="text-orange-600">
+                        <Button variant="outline" size="sm" className="text-orange-600" >
                           Apply Discount
                         </Button>
                       )}
@@ -436,6 +439,6 @@ export default function Dashboard() {
           </CardContent>
         </Card>
       </div>
-    </div>
+    
   );
 }

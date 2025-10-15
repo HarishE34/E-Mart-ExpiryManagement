@@ -82,26 +82,7 @@ const ProductsPage = () => {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        width: "100%",
-        height: "100vh",
-        backgroundColor: "#f8fafc",
-        fontFamily: "Arial, sans-serif",
-      }}
-    >
-      {/* Sidebar */}
-      <div
-        style={{
-          width: "15%",
-          height: "100vh",
-          backgroundColor: "#ffffff",
-          borderRight: "1px solid #e5e7eb",
-        }}
-      ></div>
-
-      {/* Main Content */}
+    
       <div
         style={{
           width: "85%",
@@ -361,7 +342,7 @@ const ProductsPage = () => {
           />
         )}
       </div>
-    </div>
+    
   );
 };
 
