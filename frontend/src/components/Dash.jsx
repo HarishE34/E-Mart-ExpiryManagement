@@ -4,6 +4,7 @@ import Dashboard from './dashboard/Dashboard';
 import ProductsPage from './products-pg/Products';
 import Notify from './Notify';
 import StoreSettings from './SettingsPage/StoreSettings';
+import ReportsPage from './Reports/ReportsPage';
 
 const Dash = () => {
 
@@ -14,7 +15,7 @@ const Dash = () => {
       {activePage === 'Dashboard' && <Dashboard />}
       {activePage === 'Products' && <ProductsPage />}
       {activePage === 'Alerts' && <Notify />}
-      {/* {activePage === 'Reports' && <PlantTree />} */}
+      {activePage === 'Reports' && <ReportsPage />}
       {activePage === 'Settings' && <StoreSettings />}
       
 
