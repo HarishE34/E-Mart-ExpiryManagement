@@ -83,7 +83,7 @@ function Progress({ value = 0, className = "" }) {
 //      Dashboard
 // ----------------------- //
 
-export default function Dashboard() {
+export default function Dashboard({setActivePage}) {
   const totalProducts = mockProducts.length;
   const nearExpiryProducts = mockProducts.filter(
     (p) => p.status === "near-expiry"
@@ -168,11 +168,13 @@ export default function Dashboard() {
             </p>
           </div>
           <div className="flex items-center gap-2">
-            <Button variant="outline" size="sm">
+            <Button variant="outline" size="sm" onClick={() => setActivePage("Reports")}
+>
               <Calendar className="w-4 h-4 mr-2" />
               Last 30 Days
             </Button>
-            <Button className="bg-green-600 hover:bg-green-700" size="sm">
+            <Button className="bg-green-600 hover:bg-green-700" size="sm" onClick={() => setActivePage("Reports")}
+>
               <TrendingUp className="w-4 h-4 mr-2" />
               Export Report
             </Button>
@@ -390,12 +392,13 @@ export default function Dashboard() {
         </div>
 
         {/* Recent Alerts */}
-        <Card className="mt-6">
-          <CardHeader>
+        <Card className="mt-6" onClick={() => setActivePage("Alerts")}
+>
+          <CardHeader >
             <CardTitle>Recent Alerts</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="space-y-3">
+            <div className="space-y-3" >
               {mockProducts.filter(p => p.status !== 'fresh').slice(0, 5).map((product) => {
                 const daysLeft = getDaysUntilExpiry(product.expiryDate);
                 return (
@@ -421,7 +424,7 @@ export default function Dashboard() {
                     </div>
                     <div className="flex gap-2">
                       {product.status === 'near-expiry' && (
-                        <Button variant="outline" size="sm" className="text-orange-600">
+                        <Button variant="outline" size="sm" className="text-orange-600" >
                           Apply Discount
                         </Button>
                       )}

@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { ShoppingCart, LayoutGrid, Box, Bell, FileText, Settings, LogOut } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
-// Simplified utility for proportional sizing
 const vw = (value) => `${value}vw`;
 const vh = (value) => `${value}vh`;
 
-const SideBar = ({ setActivePage }) => {
-   // default active
+const SideBar = ({ activePage, setActivePage }) => {
+  const navigate = useNavigate();
+
+ 
 
   const navItems = [
     { name: 'Dashboard', icon: LayoutGrid },
@@ -16,28 +18,34 @@ const SideBar = ({ setActivePage }) => {
     { name: 'Settings', icon: Settings },
   ];
 
-  // 🔹 Inner NavItem component (merged here)
   const NavItem = ({ name, Icon }) => {
-    // const isActive = activeItem === name;
-    // const activeClass = isActive
-    //   ? 'bg-green-50 text-green-700 font-bold border-l-4 border-green-500'
-    //   : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900 font-medium';
+    const isActive = activePage === name;
+
+    const activeClass = isActive
+      ? 'bg-green-50 text-green-700 font-semibold border-l-4 border-green-500'
+      : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900';
 
     return (
       <div
         onClick={() => {
-   
+          
           setActivePage(name);
         }}
-        className={`flex items-center cursor-pointer transition-all text-gray-600 hover:bg-gray-100 hover:text-gray-900 font-medium`}
+        className={`flex items-center cursor-pointer transition-all duration-200 ${activeClass}`}
         style={{
           padding: `${vh(1.8)} ${vw(1.5)}`,
           fontSize: vw(1.1),
-          borderRadius: `0 ${vw(0.3)} ${vw(0.3)} 0` ,
+          borderRadius: `0 ${vw(0.3)} ${vw(0.3)} 0`,
           marginBottom: vh(0.5),
         }}
       >
-        <Icon style={{ width: vw(1.5), height: vh(2.8), marginRight: vw(0.8) }} />
+        <Icon
+          style={{
+            width: vw(1.5),
+            height: vh(2.8),
+            marginRight: vw(0.8),
+          }}
+        />
         <span>{name}</span>
       </div>
     );
@@ -92,6 +100,9 @@ const SideBar = ({ setActivePage }) => {
           style={{
             padding: `${vh(1)} 0`,
             fontSize: vw(1.1),
+          }}
+          onClick={() => {
+            navigate('/');
           }}
         >
           <LogOut

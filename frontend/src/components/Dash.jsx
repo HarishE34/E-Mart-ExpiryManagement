@@ -11,8 +11,8 @@ const Dash = () => {
     const [activePage, setActivePage] = useState('Dashboard');
   return (
     <div className='flex h-[100vh] w-[100vw] '>
-      <SideBar setActivePage={setActivePage} />
-      {activePage === 'Dashboard' && <Dashboard />}
+      <SideBar activePage={activePage} setActivePage={setActivePage} />
+      {activePage === 'Dashboard' && <Dashboard setActivePage={setActivePage}/>}
       {activePage === 'Products' && <ProductsPage />}
       {activePage === 'Alerts' && <Notify />}
       {activePage === 'Reports' && <ReportsPage />}

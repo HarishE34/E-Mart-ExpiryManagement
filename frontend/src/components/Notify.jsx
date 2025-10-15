@@ -28,7 +28,7 @@ const initialAlertData = [
  */
 const DiscountPopup = ({ product, onClose, onApply }) => {
     // Hardcoding discount options for simplicity based on image context
-    const discountOptions = useMemo(() => ['- 10 %', '- 25 %', '- 50 %'], []);
+    const discountOptions = useMemo(() => ['- 10 %', '- 25 %', '- 50 %', '-75%'], []);
     const [selectedDiscount, setSelectedDiscount] = useState(discountOptions[0]);
 
     const handleApply = () => {
@@ -37,7 +37,7 @@ const DiscountPopup = ({ product, onClose, onApply }) => {
 
     return (
         <div 
-            className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-50"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/45"
             onClick={onClose}
         >
             <div 

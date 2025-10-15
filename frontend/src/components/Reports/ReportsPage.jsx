@@ -94,7 +94,7 @@ export default function ReportsPage() {
    
       <div style={{backgroundColor:"white",height:"100vh",width:"85vw",overflowY:"auto"}}>
         <div className="flex justify-between items-center mb-6">
-          <div className="relative w-64">
+          <div className="relative w-64 py-[2vh] px-[1vw]">
             <input
               type="text"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-200"
@@ -116,13 +116,13 @@ export default function ReportsPage() {
             </div>
           </div>
         </div>
-      <h2 style={heading}>Reports & Analytics</h2>
-      <p style={subText}>
+      <h2 style={heading} className="py-[0.2vh] px-[1vw]">Reports & Analytics</h2>
+      <p style={subText} className="py-[0.5vh] px-[1vw]">
         Interactive dashboard to track product wastage and trends.
       </p>
 
       {/* Filters */}
-      <div style={filterRow}>
+      <div style={filterRow} className="py-[2vh] px-[1vw]">
         <label style={{fontSize:"20px",fontWeight:"bold"}}>Report Type:</label>
         <select
           value={reportType}
@@ -165,7 +165,7 @@ export default function ReportsPage() {
       </div>
 
       {/* Summary */}
-      <div style={summaryRow}>
+      <div style={summaryRow} className="py-[2vh] px-[1vw]">
         {summaryCard(
           "Total Wastage",
           `${totalWastage} items`,
@@ -177,7 +177,7 @@ export default function ReportsPage() {
       </div>
 
       {/* Chart */}
-      <div style={chartBox}>
+      <div style={chartBox} className="py-[2vh] px-[1vw]">
         <h4 style={chartTitleStyle}>Monthly {reportType} Trends</h4>
         <ResponsiveContainer width="100%" height={250}>
           {reportType === "Wastage" ? (
@@ -211,7 +211,7 @@ export default function ReportsPage() {
       </div>
 
       {/* Smart Suggestions */}
-      <div style={sectionBox}>
+      <div style={sectionBox} className="py-[2vh] px-[1vw]">
         <h4 style={chartTitleStyle}>Smart Suggestions</h4>
         {suggestion(
           "Offer 20% off Bakery items expiring soon",
